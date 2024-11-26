@@ -10,9 +10,7 @@ SRC_DIR = src
 OBJ_DIR = .obj
 INC_DIR = include
 
-UNAME_S := $(shell uname -s)
-LINUX_GL_LIBS = -lGL
-LIBS =
+
 
 # Source files
 SRCS = $(wildcard $(SRC_DIR)/*.cpp)
@@ -25,9 +23,10 @@ SRC2 = $(wildcard $(INC_DIR)/glad/src/glad.c)
 OBJS += $(patsubst $(INC_DIR)/glad/src/%.c,$(OBJ_DIR)/%.o,$(SRC2))
 
 
-
+LIBS =
 UNAME_S := $(shell uname -s)
 LINUX_GL_LIBS = -lGL
+
 
 CXXFLAGS = -std=c++17
 
