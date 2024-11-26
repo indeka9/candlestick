@@ -1,7 +1,7 @@
 1. just run make command to execute the makefile at the shell prompt.
 
-2. Make sure you have installed OpenGl(glad) library. if not follow the instructions below. This is required to compile and link
-indclude/glad/src/glad.c
+2. Make sure you have installed OpenGl(glad) library. if not follow the instructions below. This is required to compile and link 
+include/glad/src/glad.c
 
 OpenGL Setup: Installing dependencies
 
