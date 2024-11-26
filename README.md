@@ -7,14 +7,22 @@ OpenGL Setup: Installing dependencies
 
 Before installing the required libraries, we’ll first have to install a few dependencies. So open your terminal and run the following commands:
 
-sudo apt-get update 
+sudo apt-get update
+
 sudo apt-get install cmake pkg-config 
+
 sudo apt-get install mesa-utils libglu1-mesa-dev freeglut3-dev mesa-common-dev 
+
 sudo apt-get install libglew-dev libglfw3-dev libglm-dev 
+
 sudo apt-get install libao-dev libmpg123-dev 
+
 sudo apt install libxcursor-dev 
+
 sudo apt install libxinerama-dev 
+
 sudo apt install libxkbcommon-dev 
+
 sudo apt install libxi-dev 
 
 
