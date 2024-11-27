@@ -28,7 +28,7 @@ UNAME_S := $(shell uname -s)
 LINUX_GL_LIBS = -lGL
 
 
-CXXFLAGS = -std=c++17
+CXXFLAGS = -std=c++17 -pthread
 
 ifeq ($(UNAME_S), Linux) #LINUX
 	ECHO_MESSAGE = "Linux"
