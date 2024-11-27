@@ -28,7 +28,7 @@ sudo apt install libxi-dev
 
 Running the below commands would install GLFW in your system:
 
-sudo cd /usr/local/lib/
+cd /usr/local/lib/
 
 sudo git clone https://github.com/glfw/glfw.git
 
