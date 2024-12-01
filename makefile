@@ -1,7 +1,5 @@
 .PHONY: all
 
-EXE = fx-trader
-
 CXX = g++
 
 
