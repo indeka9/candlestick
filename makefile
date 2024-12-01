@@ -7,10 +7,13 @@ CXX = g++
 
 # Directories
 SRC_DIR = src
-OBJ_DIR = .obj
+OBJ_DIR = build/obj
 INC_DIR = include
+BUILD_DIR = build
 
-
+UNAME_S := $(shell uname -s)
+LINUX_GL_LIBS = -lGL
+LIBS =
 
 # Source files
 SRCS = $(wildcard $(SRC_DIR)/*.cpp)
@@ -23,12 +26,11 @@ SRC2 = $(wildcard $(INC_DIR)/glad/src/glad.c)
 OBJS += $(patsubst $(INC_DIR)/glad/src/%.c,$(OBJ_DIR)/%.o,$(SRC2))
 
 
-LIBS =
+
 UNAME_S := $(shell uname -s)
 LINUX_GL_LIBS = -lGL
 
-
-CXXFLAGS = -std=c++17 -pthread
+CXXFLAGS = -std=c++17
 
 ifeq ($(UNAME_S), Linux) #LINUX
 	ECHO_MESSAGE = "Linux"
@@ -43,7 +45,7 @@ CXXFLAGS += -g -Iinclude/imgui
 
 
 # Executable
-TARGET = fx-trader
+TARGET = $(BUILD_DIR)/fx-trader
 
 
 $(OBJ_DIR)/%.o:%.cpp | $(OBJ_DIR) | $(OBJ_DIR)
@@ -59,10 +61,10 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 
-all: $(EXE)
+all: $(TARGET)
 	@echo Build complete for $(ECHO_MESSAGE)
 
-$(EXE): $(OBJS)
+$(TARGET): $(OBJS)
 	$(CXX) -o $@ $^ $(CXXFLAGS) $(LIBS)
 
 
@@ -71,6 +73,8 @@ $(EXE): $(OBJS)
 clean:
 	rm -f $(OBJ_DIR)/*.o $(TARGET)
 
+$(BUILD_DIR):
+	@mkdir -p $@
 
 $(OBJ_DIR):
 	@mkdir -p $@
