@@ -32,7 +32,7 @@ cd /usr/local/lib/
 
 sudo git clone https://github.com/glfw/glfw.git
 
-sudo cd glfw
+cd glfw
 
 sudo cmake .
 
